@@ -18,4 +18,3 @@ filter:
     - binary_sensor.garage_motion
     - binary_sensor.office_motion
     - sensor.family_room_temperature
-    - media_player.harmony_hub
