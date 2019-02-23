@@ -1,0 +1,2 @@
+themes: !include themes.yaml
+javascript_version: latest

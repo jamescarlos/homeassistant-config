@@ -1,0 +1,7 @@
+harmony_hub_activity:
+  name: Harmony Hub Activity
+  options:
+    - PowerOff
+    - Watch TV
+    - SHIELD TV
+  icon: mdi:remote

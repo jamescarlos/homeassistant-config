@@ -1,0 +1,76 @@
+# Dark Sky
+- platform: darksky
+  api_key: !secret darksky_api_key
+  monitored_conditions:
+    - temperature
+    - temperature_high
+    - temperature_low
+# Plex Sensor
+- platform: plex
+  host: !secret plex_address
+  token: !secret plex_token
+# Harmony Current Activity
+- platform: template
+  sensors:
+    harmony_hub_current_activity:
+      friendly_name: 'Harmony Hub Current Activity'
+      entity_id: remote.harmony_hub
+      value_template: >
+        {% if states.remote.harmony_hub.attributes.current_activity == null%}
+          'Unknown'
+        {% else %}
+          {{states.remote.harmony_hub.attributes.current_activity}}
+        {% endif %}
+# NVR Recording
+- platform: rest
+  name: Lastest Recording ID
+  method: GET
+  resource: !secret nvr_recordings
+  value_template: >
+    {% set last = (value_json.data | count) - 1 %}
+    {{ value_json.data[last]['_id'] }}
+# System Monitor
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /config
+    - type: memory_use_percent
+    - type: processor_use
+    - type: network_in
+      arg: eno1
+    - type: network_out
+      arg: eno1
+    - type: load_1m
+    - type: load_5m
+    - type: load_15m
+# hue_dimmer_switch (0x0017880104f71c98): 324131092621 - Philips Hue dimmer switch (EndDevice)
+- platform: "mqtt"
+  name: "Hue Dimmer Switch"
+  state_topic: "zigbee2mqtt/hue_dimmer_switch"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  icon: "mdi:gesture-double-tap"
+  value_template: "{{ value_json.action }}"
+  force_update: true
+- platform: "mqtt"
+  name: "Hue Dimmer Switch Battery"
+  state_topic: "zigbee2mqtt/hue_dimmer_switch"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  unit_of_measurement: "%"
+  device_class: "battery"
+  value_template: "{{ value_json.battery }}"
+# outlet (0x000d6f00042bcc83): 4256251-RZHAC - Centralite White Swiss power outlet switch with power meter (Router)
+- platform: "mqtt"
+  name: "Outlet Power"
+  state_topic: "zigbee2mqtt/outlet"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  unit_of_measurement: "Watt"
+  icon: "mdi:flash"
+  value_template: "{{ value_json.power }}"
+# smartthings_smartsense1 (0x000d6f000b632c19): 3321-S - SmartThings Multi Sensor (2015 model) (EndDevice)
+- platform: "mqtt"
+  name: "Family Room Temperature"
+  state_topic: "zigbee2mqtt/smartthings_smartsense1"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  unit_of_measurement: "°C"
+  device_class: "temperature"
+  value_template: "{{ value_json.temperature }}"

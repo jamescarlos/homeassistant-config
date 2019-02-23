@@ -1,0 +1,21 @@
+auto_start: false
+filter:
+  include_entities:
+    - light.porch_light
+    - light.emmas_light
+    - light.family_room_light
+    - light.office_light
+    - light.office_light_2
+    - light.playroom_light
+    - input_boolean.ana_present
+    - input_boolean.james_present
+    - binary_sensor.james_present
+    - binary_sensor.ana_present
+    - binary_sensor.back_door
+    - binary_sensor.front_door
+    - binary_sensor.family_room_motion
+    - binary_sensor.front_motion
+    - binary_sensor.garage_motion
+    - binary_sensor.office_motion
+    - sensor.family_room_temperature
+    - media_player.harmony_hub

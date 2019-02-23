@@ -1,0 +1,26 @@
+- id: start_homekit_delay
+  alias: 'Start HomeKit'
+  hide_entity: true
+  trigger:
+    - platform: event
+      event_type: zwave.network_ready
+    - platform: event
+      event_type: zwave.network_complete
+    - platform: event
+      event_type: zwave.network_complete_some_dead
+  action:
+    - service: homekit.start
+###############
+# Harmony Hub #
+###############
+- id: select_harmony_hub_activity
+  alias: 'Select Harmony Hub Activity'
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: sensor.harmony_hub_current_activity
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.harmony_hub_activity
+        option: "{{ states('sensor.harmony_hub_current_activity') }}"

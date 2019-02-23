@@ -1,0 +1,10 @@
+sensor.hue_dimmer_switch:
+  hidden: true
+sensor.lastest_recording_id:
+  hidden: true
+input_boolean.james_present:
+  hidden: true
+input_boolean.ana_present:
+  hidden: true
+binary_sensor.flic_80e4da7486d3:
+  hidden: true

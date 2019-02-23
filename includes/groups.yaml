@@ -1,0 +1,10 @@
+people:
+  name: People
+  entities:
+    - binary_sensor.ana_present
+    - binary_sensor.james_present
+doorswindows:
+  name: Doors/Windows
+  entities:
+    - binary_sensor.front_door
+    - binary_sensor.back_door

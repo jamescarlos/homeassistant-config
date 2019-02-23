@@ -1,0 +1,14 @@
+usb_path: /dev/ttyUSB1
+device_config:
+  light.office_light:
+    polling_intensity: 1
+    refresh_value: true
+    delay: 2
+  light.emmas_light:
+    polling_intensity: 1
+    refresh_value: true
+    delay: 2
+  light.playroom_light:
+    polling_intensity: 1
+    refresh_value: true
+    delay: 2

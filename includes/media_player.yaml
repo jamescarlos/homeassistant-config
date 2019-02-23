@@ -1,0 +1,52 @@
+- platform: plex
+- platform: universal
+  name: Harmony Hub
+  children:
+    - media_player.appletv4k
+    - media_player.shield_android_tv
+    - media_player.shield
+  commands:
+    turn_on:
+      service: remote.turn_on
+      data:
+        entity_id: remote.harmony_hub
+        activity: 16678252
+    turn_off:
+      service: remote.turn_on
+      data:
+        entity_id: remote.harmony_hub
+        activity: -1
+    volume_up:
+      service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 18812939
+        command: VolumeUp
+    volume_down:
+      service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 18812939
+        command: VolumeDown
+    volume_mute:
+      service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 18812939
+        command: Mute
+    select_source:
+      service: remote.turn_on
+      data_template:
+        entity_id: remote.harmony_hub
+        activity: >
+          {% if source ==  'Watch TV' %}
+            16678252
+          {% elif source ==  'SHIELD TV' %}
+            34609399
+          {% elif source == 'PowerOff' %}
+            -1
+          {% endif %}
+  attributes:
+    state: remote.harmony_hub
+    source: sensor.harmony_hub_current_activity
+    source_list: input_select.harmony_hub_activity|source_list

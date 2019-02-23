@@ -1,0 +1,16 @@
+- platform: generic
+  name: "Office"
+  still_image_url: !secret motioneye_camera1
+  scan_interval: 2
+- platform: generic
+  name: "Family Room"
+  still_image_url: !secret motioneye_camera2
+  scan_interval: 2
+- platform: generic
+  name: "Front"
+  still_image_url: !secret motioneye_camera3
+  scan_interval: 2
+- platform: generic
+  name: "Garage"
+  still_image_url: !secret motioneye_camera4
+  scan_interval: 2

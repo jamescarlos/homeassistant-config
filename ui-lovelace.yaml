@@ -1,0 +1,151 @@
+title: Home
+background: top left 100% repeat url('/local/images/noise.png') fixed
+excluded_entities:
+resources:
+  - url: /local/custom_lovelace/mini-graph-card-bundle.js?v=0.2.4
+    type: module
+  - url: /local/custom_lovelace/mini-media-player-bundle.js?v=1.0.2
+    type: module
+  - url: /local/custom_lovelace/compact-custom-header.js?v=0.0.1
+    type: module
+  - url: /local/custom_lovelace/weather-card.js
+    type: module
+views:
+  - title: Home
+    icon: mdi:home-assistant
+    cards:
+      - type: custom:compact-custom-header
+        main_config: true
+        options: clock
+        voice: hide
+        clock_format: 12
+      - type: horizontal-stack
+        cards:
+          - type: entity-button
+            name: 'Family Room'
+            entity: light.family_room_light
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+          - type: entity-button
+            name: Office
+            entity: light.office_light
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+          - type: entity-button
+            name: Office 2
+            entity: light.office_light_2
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+      - type: horizontal-stack
+        cards:
+          - type: entity-button
+            name: Emma's
+            entity: light.emmas_light
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+          - type: entity-button
+            name: Porch
+            entity: light.porch_light
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+          - type: entity-button
+            name: 'Play Room'
+            entity: light.playroom_light
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+      - type: custom:mini-media-player
+        entity: media_player.harmony_hub
+        volume_stateless: true
+        source: icon
+        info: scroll
+        shortcuts:
+          columns: 3
+          buttons:
+            - icon: mdi:apple
+              type: source
+              id: 'Watch TV'
+            - icon: mdi:television
+              type: source
+              id: 'SHIELD TV'
+      - type: custom:mini-graph-card
+        name: Temperature
+        points_per_hour: 1
+        entities:
+          - entity: sensor.family_room_temperature
+            name: Inside
+            show_state: true
+          - entity: sensor.dark_sky_temperature
+            name: Outside
+            show_state: true
+      - type: glance
+        entities:
+          - binary_sensor.ana_present
+          - binary_sensor.james_present
+      - type: glance
+        entities:
+          - binary_sensor.front_door
+          - binary_sensor.back_door
+      - type: glance
+        entities:
+          - binary_sensor.front_motion
+          - binary_sensor.family_room_motion
+          - binary_sensor.garage_motion
+          - binary_sensor.office_motion
+      - type: custom:weather-card
+        entity: weather.weather
+        icons: '/local/custom_lovelace/weather-card-icons/'
+  - title: Cameras
+    icon: mdi:cctv
+    cards:
+      - type: custom:compact-custom-header
+      - type: picture-entity
+        entity: camera.front
+      - type: picture-entity
+        entity: camera.garage
+      - type: picture-entity
+        entity: camera.family_room
+      - type: picture-entity
+        entity: camera.office
+  - title: System
+    icon: mdi:server
+    cards:
+      - type: custom:compact-custom-header
+      - type: custom:mini-graph-card
+        points_per_hour: 1
+        entities:
+          - entity: sensor.anaphonex_battery_level
+            show_state: true
+          - entity: sensor.jamesphonex_battery_level
+            show_state: true
+      - type: custom:mini-graph-card
+        points_per_hour: 1
+        entities:
+          - entity: sensor.load_1m
+            show_state: true
+          - entity: sensor.load_5m
+            show_state: true
+          - entity: sensor.load_15m
+            show_state: true
+      - type: entities
+        title: ZWave Devices
+        show_header_toggle: false
+        entities:
+          - zwave.emmas_room
+          - zwave.family_room_light
+          - zwave.hank_hkzwdws01_doorwindow_sensor_6
+          - zwave.hank_hkzwdws01_doorwindow_sensor_7
+          - zwave.linear_lb60z1_dimmable_led_light_bulb
+          - zwave.linear_pd300z2_plugin_dimmer_module_2
+          - zwave.sigma_designs_uzb_zwave_usb_adapter

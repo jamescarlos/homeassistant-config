@@ -1,0 +1,8 @@
+  - name: Home
+    latitude: !secret latitude
+    longitude: !secret longitude
+    radius: 750
+  - name: Ana Work
+    latitude: !secret ana_work_latitude
+    longitude: !secret ana_work_longitude
+    radius: 350

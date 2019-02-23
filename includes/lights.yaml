@@ -1,0 +1,14 @@
+- platform: switch
+  name: "Family Room Light"
+  entity_id: switch.family_room_light
+- platform: switch
+  name: "Office Light 2"
+  entity_id: switch.living_room_plug
+# porch_light (0x7ce524000001e94c): 22670 - GE Link smart LED light bulb, BR30 soft white (2700K) (Router)
+- platform: "mqtt"
+  name: "Porch Light"
+  state_topic: "zigbee2mqtt/porch_light"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  brightness: true
+  schema: "json"
+  command_topic: "zigbee2mqtt/porch_light/set"

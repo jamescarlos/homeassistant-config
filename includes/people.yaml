@@ -1,0 +1,10 @@
+- name: Ana
+  id: 1eb9cca6c01e46809b25885982b80dd1
+  device_trackers:
+    - device_tracker.anaphonex
+    - device_tracker.anaphonex_unifi
+- name: James
+  id: b50c7a77a7a644de8cd2c388cc0e44a3
+  device_trackers:
+    - device_tracker.jamesphonex
+    - device_tracker.jamesphonex_unifi

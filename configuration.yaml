@@ -1,0 +1,44 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: !secret elevation
+  unit_system: imperial
+  time_zone: !secret timezone
+  customize: !include includes/customize.yaml
+
+http: !include includes/http.yaml
+zwave: !include includes/zwave.yaml
+frontend: !include includes/frontend.yaml
+mqtt: !include includes/mqtt.yaml
+person: !include includes/people.yaml
+lovelace: !include includes/lovelace.yaml
+tts: !include includes/tts.yaml
+weather: !include includes/weather.yaml
+remote: !include includes/remotes.yaml
+media_player: !include includes/media_player.yaml
+recorder: !include includes/recorder.yaml
+input_boolean: !include includes/input_boolean.yaml
+input_select: !include includes/input_select.yaml
+logbook: !include includes/logbook.yaml
+notify: !include includes/notify.yaml
+history: !include includes/history.yaml
+light: !include includes/lights.yaml
+homekit: !include includes/homekit.yaml
+camera: !include includes/cameras.yaml
+sensor: !include includes/sensors.yaml
+group: !include includes/groups.yaml
+automation: !include includes/automations.yaml
+script: !include includes/scripts.yaml
+binary_sensor: !include includes/binary_sensors.yaml
+switch: !include includes/switches.yaml
+device_tracker: !include includes/device_tracker.yaml
+zone: !include includes/zones.yaml
+logger: !include includes/logger.yaml
+
+system_health:
+config:
+updater:
+map:
+sun:
+ios:

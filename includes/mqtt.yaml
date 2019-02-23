@@ -1,0 +1,8 @@
+broker: !secret mqtt_address
+discovery: false
+birth_message:
+  topic: 'hass/status'
+  payload: 'online'
+will_message:
+  topic: 'hass/status'
+  payload: 'offline'

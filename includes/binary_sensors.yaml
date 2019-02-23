@@ -1,0 +1,53 @@
+- platform: template
+  sensors:
+    ana_present:
+      friendly_name: "Ana"
+      device_class: presence
+      value_template: >-
+        {{ is_state('input_boolean.ana_present', 'on') }}
+    james_present:
+      friendly_name: "James"
+      device_class: presence
+      value_template: >-
+        {{ is_state('input_boolean.james_present', 'on') }}
+    front_door:
+      friendly_name: "Front Door"
+      device_class: opening
+      value_template: "{{ is_state('sensor.front_door_access_control', '22') }}"
+    back_door:
+      friendly_name: "Back Door"
+      device_class: opening
+      value_template: "{{ is_state('sensor.back_door_access_control', '22') }}"
+- platform: mqtt
+  name: "Office Motion"
+  state_topic: "cameras/motion/office"
+  payload_on: "ON"
+  payload_off: "OFF"
+  device_class: motion
+- platform: mqtt
+  name: "Family Room Motion"
+  state_topic: "cameras/motion/family_room"
+  payload_on: "ON"
+  payload_off: "OFF"
+  device_class: motion
+- platform: mqtt
+  name: "Front Motion"
+  state_topic: "cameras/motion/front"
+  payload_on: "ON"
+  payload_off: "OFF"
+  device_class: motion
+- platform: mqtt
+  name: "Garage Motion"
+  state_topic: "cameras/motion/garage"
+  payload_on: "ON"
+  payload_off: "OFF"
+  device_class: motion
+# smartthings_smartsense1 (0x000d6f000b632c19): 3321-S - SmartThings Multi Sensor (2015 model) (EndDevice)
+- platform: "mqtt"
+  name: "Family Room Binary Sensor"
+  state_topic: "zigbee2mqtt/smartthings_smartsense1"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  payload_on: false
+  payload_off: true
+  value_template: "{{ value_json.contact }}"
+  device_class: "door"

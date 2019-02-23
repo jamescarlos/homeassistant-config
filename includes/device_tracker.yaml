@@ -1,0 +1,8 @@
+- platform: unifi
+  host: !secret nuc_address
+  username: !secret unifi_username
+  password: !secret unifi_password
+  site_id: !secret unifi_site_id
+  verify_ssl: false
+  ssid_filter:
+    - 'nowars'
