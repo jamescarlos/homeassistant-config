@@ -49,4 +49,4 @@
   attributes:
     state: remote.harmony_hub
     source: sensor.harmony_hub_current_activity
-    source_list: input_select.harmony_hub_activity|source_list
+    source_list: input_select.harmony_hub_activity|options
