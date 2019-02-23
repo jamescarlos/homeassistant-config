@@ -2,6 +2,8 @@
 
 My Home Assistant stack operates on an Ubuntu 18.04.2 LTS host using docker containers.
 
+![Home](https://i.imgur.com/uMhw1Iw.png)
+
 ## Hardware
 Name|Use
 ----|---
@@ -38,3 +40,10 @@ Name|Image|Notes
 [Node-RED](https://nodered.org/)|[nodered/node-red-docker:v8](https://hub.docker.com/r/nodered/node-red-docker)|Takes care of automating remote button presses, alexa commands, notifications, lighting automations
 [MariaDB](https://mariadb.org/)|[mariadb](https://hub.docker.com/_/mariadb)|Home Assistant recorder database
 [MotionEye](https://github.com/ccrisan/motioneye)|[ccrisan/motioneye](https://hub.docker.com/r/ccrisan/motioneye)|Handles MQTT communication when motion detected from cameras
+
+## Home Assistant Resources
+- [Mini Graph Card](https://github.com/kalkih/mini-graph-card)
+- [Mini Media Card](https://github.com/kalkih/mini-media-player)
+- [Compact Custom Header](https://github.com/maykar/compact-custom-header)
+- [Lovelace Animated Weather Card](https://github.com/bramkragten/custom-ui/tree/master/weather-card)
+- Slightly modified version of [midnight-remake](https://gist.github.com/kalkih/0c7f865855f0f0e2f6d6610c4637cd5d) theme.
