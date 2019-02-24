@@ -28,6 +28,10 @@ Nvidia Shield|Gigabit Ethernet|Media Player
 Apple iPhone X|Wi-Fi, Cellular, GPS|Device Tracker
 WyzeCam v2|Wi-Fi|Camera, Motion
 UniFi Video Camera G3|Ethernet|Camera, Motion
+Google Home Mini|Wi-Fi|Media Player
+Amazon Echo|Wi-Fi|Voice
+Amazon Echo Dot|Wi-Fi|Voice
+Amazon Echo Spot|Wi-Fi|Voice
 
 ## Software Containers
 Name|Image|Notes
