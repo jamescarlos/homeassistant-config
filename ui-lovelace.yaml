@@ -68,8 +68,10 @@ views:
       - type: custom:mini-media-player
         entity: media_player.harmony_hub
         volume_stateless: true
-        source: icon
+        source: full
         info: scroll
+        toggle_power: false
+        idle_view: false
         shortcuts:
           columns: 3
           buttons:
