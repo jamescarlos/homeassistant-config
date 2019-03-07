@@ -93,8 +93,8 @@ views:
             show_state: true
       - type: glance
         entities:
-          - binary_sensor.ana_present
-          - binary_sensor.james_present
+          - person.ana
+          - person.james
       - type: glance
         entities:
           - binary_sensor.front_door
