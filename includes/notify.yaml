@@ -8,3 +8,7 @@
   vapid_pub_key: !secret vapid_pub_key
   vapid_prv_key: !secret vapid_prv_key
   vapid_email: !secret vapid_email
+- platform: pushover
+  name: Pushover James
+  api_key: !secret pushover_api_key
+  user_key: !secret pushover_user_key
