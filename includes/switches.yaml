@@ -1,5 +1,3 @@
-- platform: tplink
-  host: hs100
 # outlet (0x000d6f00042bcc83): 4256251-RZHAC - Centralite White Swiss power outlet switch with power meter (Router)
 - platform: "mqtt"
   name: "Outlet Switch"

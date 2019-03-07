@@ -1,0 +1,3 @@
+discovery: false
+switch:
+  - host: hs100
