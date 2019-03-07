@@ -31,6 +31,7 @@ include:
     - remote.harmony_hub
     - input_select.harmony_hub_activity
     - sensor.harmony_hub_current_activity
+    - sensor.family_room_temperature
     - sensor.dark_sky_temperature
     - sensor.family_room_temperature
     - sensor.load_1m
