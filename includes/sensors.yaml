@@ -74,3 +74,11 @@
   unit_of_measurement: "°C"
   device_class: "temperature"
   value_template: "{{ value_json.temperature }}"
+# smartthings_smartsense2 (0x000d6f000b630d74): 3321-S - SmartThings Multi Sensor (2015 model) (EndDevice)
+- platform: "mqtt"
+  name: "Temperature Sensor 2"
+  state_topic: "zigbee2mqtt/smartthings_smartsense2"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  unit_of_measurement: "°C"
+  device_class: "temperature"
+  value_template: "{{ value_json.temperature }}"
