@@ -1,0 +1,10 @@
+google_actions:
+  filter:
+    include_entities:
+      - light.family_room_light
+      - light.office_light
+      - light.office_light_2
+      - light.emmas_light
+      - light.playroom_light
+      - light.porch_light
+      - media_player.harmony_hub

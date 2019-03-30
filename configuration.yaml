@@ -8,6 +8,7 @@ homeassistant:
   customize: !include includes/customize.yaml
 
 http: !include includes/http.yaml
+cloud: !include includes/cloud.yaml
 zwave: !include includes/zwave.yaml
 frontend: !include includes/frontend.yaml
 mqtt: !include includes/mqtt.yaml
@@ -36,7 +37,9 @@ device_tracker: !include includes/device_tracker.yaml
 tplink: !include includes/tplink.yaml
 zone: !include includes/zones.yaml
 logger: !include includes/logger.yaml
+stream: !include includes/streams.yaml
 
+mobile_app:
 system_health:
 config:
 updater:
