@@ -88,6 +88,9 @@ views:
           - entity: sensor.family_room_temperature
             name: Inside
             show_state: true
+          - entity: sensor.temperature_sensor_2
+            name: Office
+            show_state: true
           - entity: sensor.dark_sky_temperature
             name: Outside
             show_state: true
